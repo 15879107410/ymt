@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Curated Urbanist - 首页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-dim": "#a70138",
+                        "on-secondary-fixed": "#394043",
+                        "surface-bright": "#fff4f3",
+                        "on-primary-fixed": "#000000",
+                        "secondary-dim": "#4a5153",
+                        "on-surface-variant": "#834c4d",
+                        "primary-container": "#ff7859",
+                        "on-error-container": "#510017",
+                        "outline-variant": "#df9c9c",
+                        "on-error": "#ffefef",
+                        "on-tertiary": "#feeeff",
+                        "surface-container-high": "#ffdad9",
+                        "on-tertiary-container": "#50086f",
+                        "surface-dim": "#ffc7c6",
+                        "on-primary": "#ffefec",
+                        "error-container": "#f74b6d",
+                        "inverse-on-surface": "#cd8c8c",
+                        "primary-dim": "#9b1e00",
+                        "secondary-fixed": "#dde4e6",
+                        "on-secondary-container": "#4c5355",
+                        "surface": "#fff4f3",
+                        "tertiary-dim": "#733291",
+                        "tertiary-fixed-dim": "#ce88ec",
+                        "on-surface": "#4e2123",
+                        "surface-container-highest": "#ffd2d2",
+                        "on-tertiary-fixed-variant": "#5a1778",
+                        "primary-fixed": "#ff7859",
+                        "secondary-fixed-dim": "#cfd6d8",
+                        "on-primary-container": "#4a0900",
+                        "surface-tint": "#b02604",
+                        "outline": "#a26767",
+                        "inverse-surface": "#240305",
+                        "on-background": "#4e2123",
+                        "secondary-container": "#dde4e6",
+                        "on-secondary-fixed-variant": "#565d5f",
+                        "primary-fixed-dim": "#fe5d39",
+                        "error": "#b41340",
+                        "on-secondary": "#edf4f6",
+                        "tertiary-fixed": "#dc95fb",
+                        "tertiary": "#803f9e",
+                        "on-primary-fixed-variant": "#5b0d00",
+                        "surface-variant": "#ffd2d2",
+                        "inverse-primary": "#fe5d39",
+                        "surface-container": "#ffe1e1",
+                        "secondary": "#565d5f",
+                        "tertiary-container": "#dc95fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#2c0040",
+                        "surface-container-low": "#ffedec",
+                        "primary": "#b02604",
+                        "background": "#fff4f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff4f3; /* surface */
+            color: #4e2123; /* on-surface */
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-header {
+            background-color: rgba(255, 244, 243, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #b02604, #ff7859);
+        }
+        /* Hide scrollbar for horizontal scrolling elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-32 selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar JSON Anchor Translation -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 glass-header no-border shadow-none">
+<div class="flex items-center gap-3 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container-low shadow-[0_4px_10px_rgb(78,33,35,0.06)] bg-surface-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young woman with soft natural lighting and warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXijEWoF_gPhlc2G_-4tG6Ky6O1TND9xvxN_lJRxgWS0RlBh0RD8rrXtBi4jmSkY9T37TQM_Er9FO70-YbgEKfDnFxlukLMAkAlNYL8CT_S7_sSvrHaGWkCAFIvEgAglCFMbLUkgMkjlf7KUL-Kj6xGOBotczsc6ffCB1z7i7USCsGBnF7N8Nc9jW3ww-5tUAGA8WWmSSJqdvmp8kc7eJuEoVb_MhrVf0fWhX93udIpUDIjK58ZAPhPaHNVCSs0sACPPvtqeCEBaw"/>
+</div>
+</div>
+<div class="text-xl font-black text-[#b02604] dark:text-[#ff7859] tracking-tighter font-['Plus_Jakarta_Sans'] uppercase text-center absolute left-1/2 -translate-x-1/2">
+            都市生活
+        </div>
+<button aria-label="Shopping Bag" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary hover:bg-surface-container transition-colors relative hover:opacity-80 scale-95 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+<span class="absolute top-0 right-0 w-3 h-3 bg-tertiary rounded-full border-2 border-surface"></span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Search & Greeting Section -->
+<section class="mb-10">
+<h1 class="font-headline text-[3.5rem] leading-[1.1] font-bold tracking-tight text-on-surface mb-2">早安，<br/><span class="text-primary">Sarah.</span></h1>
+<p class="font-body text-body-lg text-on-surface-variant mb-8">今天在市中心想吃点什么？</p>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="block w-full pl-16 pr-6 py-5 bg-surface-container-low border-none rounded-xl text-on-surface placeholder-on-surface-variant/50 focus:ring-0 focus:bg-surface-container-highest transition-all duration-300 font-body text-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]" placeholder="搜索美食、杂货、水疗..." type="text"/>
+<div class="absolute inset-0 rounded-xl border border-outline-variant opacity-0 group-focus-within:opacity-20 pointer-events-none transition-opacity duration-300"></div>
+<button class="absolute inset-y-2 right-2 px-4 bg-surface rounded-lg flex items-center justify-center text-primary shadow-[0_4px_15px_rgb(78,33,35,0.05)] hover:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</section>
+<!-- Categories: The Curated Modules -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-2xl font-bold text-on-surface">探索精选</h2>
+<a class="font-label text-sm font-bold text-primary flex items-center gap-1 hover:opacity-80 transition-opacity" href="#">
+                    查看全部 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x">
+<!-- Category 1 -->
+<div class="snap-start shrink-0 flex flex-col items-center gap-3 w-20">
+<div class="w-20 h-20 rounded-[1.5rem] bg-surface-container-lowest flex items-center justify-center shadow-[0_8px_20px_rgb(78,33,35,0.04)] text-primary hover:scale-105 transition-transform duration-300 cursor-pointer border border-surface-container">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<span class="font-label text-sm font-medium text-on-surface-variant">美食</span>
+</div>
+<!-- Category 2 -->
+<div class="snap-start shrink-0 flex flex-col items-center gap-3 w-20">
+<div class="w-20 h-20 rounded-[1.5rem] bg-surface-container-lowest flex items-center justify-center shadow-[0_8px_20px_rgb(78,33,35,0.04)] text-tertiary hover:scale-105 transition-transform duration-300 cursor-pointer border border-surface-container">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</div>
+<span class="font-label text-sm font-medium text-on-surface-variant">咖啡</span>
+</div>
+<!-- Category 3 -->
+<div class="snap-start shrink-0 flex flex-col items-center gap-3 w-20">
+<div class="w-20 h-20 rounded-[1.5rem] bg-surface-container-lowest flex items-center justify-center shadow-[0_8px_20px_rgb(78,33,35,0.04)] text-primary hover:scale-105 transition-transform duration-300 cursor-pointer border border-surface-container">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1;">local_mall</span>
+</div>
+<span class="font-label text-sm font-medium text-on-surface-variant">超市</span>
+</div>
+<!-- Category 4 -->
+<div class="snap-start shrink-0 flex flex-col items-center gap-3 w-20">
+<div class="w-20 h-20 rounded-[1.5rem] bg-surface-container-lowest flex items-center justify-center shadow-[0_8px_20px_rgb(78,33,35,0.04)] text-primary hover:scale-105 transition-transform duration-300 cursor-pointer border border-surface-container">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<span class="font-label text-sm font-medium text-on-surface-variant">健康</span>
+</div>
+<!-- Category 5 -->
+<div class="snap-start shrink-0 flex flex-col items-center gap-3 w-20">
+<div class="w-20 h-20 rounded-[1.5rem] bg-surface-container-lowest flex items-center justify-center shadow-[0_8px_20px_rgb(78,33,35,0.04)] text-primary hover:scale-105 transition-transform duration-300 cursor-pointer border border-surface-container">
+<span class="material-symbols-outlined text-[2rem]" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+<span class="font-label text-sm font-medium text-on-surface-variant">甜点</span>
+</div>
+</div>
+</section>
+<!-- Recommended: The Editorial Carousel -->
+<section>
+<div class="flex items-baseline justify-between mb-6">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight">编辑精选</h2>
+<span class="font-label text-xs text-on-surface-variant uppercase tracking-widest font-semibold">在您附近</span>
+</div>
+<!-- Asymmetrical Grid / List -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Premium Card 1 (Large) -->
+<article class="col-span-1 md:col-span-2 relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[0_12px_40px_rgb(78,33,35,0.05)] group cursor-pointer">
+<div class="h-64 md:h-80 w-full relative overflow-hidden">
+<img alt="Artisan Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Gourmet artisan burger on a wooden board with warm cinematic lighting and shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBros22OJiOp0D7K3JRhLAeEGy3IQ0_T5bGb7k1RtXzHfGj-ideuGqt7DBqtFjqjFJkwjVohGfO95mnEWAL5QgmYHcoZl9dPLXMSs42QiSSwkKilSgxqIFP6dmrsqoKwiXxheQsr709x8VaD0h8McyPIZVXr4xKrmKoU84F8YjEnC6I25wSdiz-3785ruq773s-h__Y9RqKL4LbYRnPrdX8VbHVfLvMzq7oAiu6IDe7ffIgKm1_6LHa-1c0YveEg9EPmjEOHPgbhts"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<!-- Floating Badges -->
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-lowest text-primary font-label text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                            </span>
+<span class="bg-tertiary text-on-tertiary font-label text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
+                                尊享
+                            </span>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-6 relative bg-surface-container-lowest -mt-4 rounded-t-xl z-10 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl font-bold text-on-surface leading-tight group-hover:text-primary transition-colors">乡村工坊</h3>
+<span class="font-headline text-xl font-bold text-on-surface">$$$</span>
+</div>
+<p class="font-body text-on-surface-variant mb-3">木火烹饪体验和手工切割。</p>
+<div class="flex items-center gap-4 text-sm font-label text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 25-35 分钟
+                            </div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span> ¥20
+                            </div>
+</div>
+</div>
+</article>
+<!-- Standard Card 2 -->
+<article class="relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[0_8px_30px_rgb(78,33,35,0.04)] group cursor-pointer flex flex-col h-full">
+<div class="h-48 w-full relative overflow-hidden">
+<img alt="Specialty Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Pour over specialty coffee being brewed in a bright minimalist cafe setting with warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29vWs2TX-8U2TjKz-1cM_Gf_pc0TdmKKK-cen-h7FLbERQap7ngkLCYxg1JrhjizF8f9C94euP8xVDsWeQodGdmBAhqqwBWzzXKfDqEGDilm5s_nJnO6cix0rTGYLdYbU_g9G64pKorD3FVK3PIUC_10w3z9t2__lHEDKZBDJwEqDw_oFjXiqj9JVNnVqusnazrnmB-bBiRzTUelzSqWPPeUsUdVmXaan6PjzlJRn2BLWcR_fQyiwJqcVT8IM5YSh2SfGmWc2P8s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest text-primary font-label text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.8
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between bg-surface-container-lowest z-10">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-xl font-bold text-on-surface leading-tight">光芒烘焙</h3>
+<span class="font-headline text-lg font-bold text-on-surface-variant">$$</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">单一产地手冲和精致糕点。</p>
+</div>
+<div class="flex items-center gap-3 text-xs font-label text-on-surface-variant bg-surface-container-low p-3 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary">directions_bike</span>
+<span>15-20 分钟</span>
+<span class="ml-auto text-primary font-bold">免配送费</span>
+</div>
+</div>
+</article>
+<!-- Standard Card 3 -->
+<article class="relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[0_8px_30px_rgb(78,33,35,0.04)] group cursor-pointer flex flex-col h-full">
+<div class="h-48 w-full relative overflow-hidden">
+<img alt="Gourmet Salad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Fresh organic gourmet salad in a ceramic bowl top down view on marble table bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa9AlUs1NqZUYnob44XUjrZhH0qtoipWo9A3Q3vA7eZ8j4d2v6yig-XLk-BZTReGuXUolz4krKprLD5-TT_rhiUp4Vvdq662mRqoYVRucadvGaz4nJ6M56HtITUApFFOJKA0Y7ybyGX7naQFHA221QABM4DAFva0WpxhqlNSRaJrcXwHSnI9tidAv6KXsLYMsIMzbHg0U52GAcD4xfd55n9IE20Tu5YF354FlL4HuMK_t1pXaa0pOiGi4pm9GwVHgEv_VCTLv8Wh8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest text-primary font-label text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.7
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between bg-surface-container-lowest z-10">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-xl font-bold text-on-surface leading-tight">翠绿沙拉</h3>
+<span class="font-headline text-lg font-bold text-on-surface-variant">$$</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">当地采购的有机沙拉和健康饮品。</p>
+</div>
+<div class="flex items-center gap-3 text-xs font-label text-on-surface-variant bg-surface-container-low p-3 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>20-30 分钟</span>
+<span class="ml-auto">¥10</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar JSON Anchor Translation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fff4f3]/80 dark:bg-[#1a0f0e]/80 backdrop-blur-2xl rounded-t-[2.5rem] no-border tonal-shift-elevation shadow-[0_-8px_30px_rgb(78,33,35,0.04)]">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center justify-center bg-[#ffedec] dark:bg-[#b02604]/20 text-[#b02604] dark:text-[#ff7859] rounded-full px-5 py-2 scale-95 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">roofing</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-wide">首页</span>
+</a>
+<!-- Inactive Tab: Discover -->
+<a class="flex flex-col items-center justify-center text-[#834c4d] px-5 py-2 hover:bg-[#ffedec]/50 dark:hover:bg-white/5 rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-wide">发现</span>
+</a>
+<!-- Inactive Tab: Orders -->
+<a class="flex flex-col items-center justify-center text-[#834c4d] px-5 py-2 hover:bg-[#ffedec]/50 dark:hover:bg-white/5 rounded-full transition-colors relative" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-wide">订单</span>
+<span class="absolute top-2 right-4 w-2 h-2 bg-primary rounded-full"></span>
+</a>
+<!-- Inactive Tab: Profile -->
+<a class="flex flex-col items-center justify-center text-[#834c4d] px-5 py-2 hover:bg-[#ffedec]/50 dark:hover:bg-white/5 rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Manrope'] text-[10px] font-semibold tracking-wide">我的</span>
+</a>
+</nav>
+</body></html>

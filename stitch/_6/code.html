@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumière - 注册/登录</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#f74b6d",
+                        "secondary-container": "#dde4e6",
+                        "on-background": "#4e2123",
+                        "primary-fixed": "#ff7859",
+                        "on-surface": "#4e2123",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary": "#feeeff",
+                        "surface-container-low": "#ffedec",
+                        "surface": "#fff4f3",
+                        "tertiary-container": "#dc95fb",
+                        "tertiary-fixed-dim": "#ce88ec",
+                        "tertiary-dim": "#733291",
+                        "on-tertiary-fixed-variant": "#5a1778",
+                        "surface-container": "#ffe1e1",
+                        "secondary-fixed": "#dde4e6",
+                        "on-primary": "#ffefec",
+                        "inverse-primary": "#fe5d39",
+                        "primary-dim": "#9b1e00",
+                        "on-secondary-fixed-variant": "#565d5f",
+                        "on-primary-fixed-variant": "#5b0d00",
+                        "outline": "#a26767",
+                        "outline-variant": "#df9c9c",
+                        "on-tertiary-container": "#50086f",
+                        "secondary-dim": "#4a5153",
+                        "on-surface-variant": "#834c4d",
+                        "on-primary-container": "#4a0900",
+                        "surface-tint": "#b02604",
+                        "secondary": "#565d5f",
+                        "tertiary-fixed": "#dc95fb",
+                        "surface-variant": "#ffd2d2",
+                        "on-secondary-fixed": "#394043",
+                        "primary-container": "#ff7859",
+                        "on-error-container": "#510017",
+                        "primary-fixed-dim": "#fe5d39",
+                        "on-error": "#ffefef",
+                        "on-secondary-container": "#4c5355",
+                        "error": "#b41340",
+                        "inverse-on-surface": "#cd8c8c",
+                        "secondary-fixed-dim": "#cfd6d8",
+                        "primary": "#b02604",
+                        "inverse-surface": "#240305",
+                        "surface-bright": "#fff4f3",
+                        "surface-container-highest": "#ffd2d2",
+                        "background": "#fff4f3",
+                        "on-tertiary-fixed": "#2c0040",
+                        "error-dim": "#a70138",
+                        "surface-dim": "#ffc7c6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#803f9e",
+                        "surface-container-high": "#ffdad9",
+                        "on-secondary": "#edf4f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-4 antialiased selection:bg-primary-container selection:text-on-primary-container">
+<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-surface-container-low rounded-xl shadow-[0_40px_80px_-20px_rgba(78,33,35,0.08)] overflow-hidden min-h-[600px]">
+<!-- Left Side: Branding / Image -->
+<div class="relative hidden md:flex flex-col justify-end p-12 bg-surface-container-highest rounded-l-xl overflow-hidden">
+<img alt="Cafe setting" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply" data-alt="warm sunlit Parisian style cafe interior with elegant modern minimalist furniture and soft natural lighting filtering through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOV4TeEf9DvVvhB3i4AD0JgVoJ257gIzU8hf4ixQvIT1aCxQ_iuLcB-ayweAF_iTAHtuASeOXkZGy9WfUZEUEiPAjXfZOl6QE_VyQTYzy-1m6-hFs090kgsHwJ4TPrdkwEkQYJvJVrVLzT8vZGrOcjuK140NqCbCbwWIb1N9HyZT4DeL5w1BVVd9M-tDaLlwyY_lCXvMd4Zf9v6lhdS0nSunWajlLqjj8ojwAsj_7fgET5vXp_pxB_wzmib2-wt3soGsDaoYhhEIY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-tint/80 to-transparent"></div>
+<div class="relative z-10">
+<h1 class="font-headline text-5xl font-extrabold text-on-primary tracking-tight mb-4 -ml-1">Lumière<br/>Local</h1>
+<p class="font-body text-lg text-on-primary/90 leading-relaxed max-w-sm">体验城市精选生活。连接本地高品质商家与追求品味的您。</p>
+</div>
+</div>
+<!-- Right Side: Interaction Area -->
+<div class="flex flex-col justify-center p-8 md:p-16 relative">
+<!-- Mobile Brand Header -->
+<div class="md:hidden mb-12 text-center">
+<h1 class="font-headline text-4xl font-extrabold text-primary tracking-tighter">Lumière</h1>
+<p class="font-label text-sm text-on-surface-variant mt-2">精选本地生活</p>
+</div>
+<div class="max-w-sm w-full mx-auto space-y-12">
+<!-- Intent Header -->
+<div class="space-y-3">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">欢迎回来</h2>
+<p class="font-body text-base text-on-surface-variant">请选择您的身份以继续</p>
+</div>
+<!-- Role Selection Bento -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Consumer Role -->
+<button class="group relative flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-DEFAULT transition-all duration-300 hover:bg-surface hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20">
+<div class="w-16 h-16 mb-4 rounded-full bg-surface-container-low flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary transition-colors" data-icon="person">person</span>
+</div>
+<span class="font-headline font-bold text-lg text-on-surface">消费者</span>
+<span class="font-label text-xs text-on-surface-variant mt-1 text-center">探索精选服务</span>
+</button>
+<!-- Merchant Role -->
+<button class="group relative flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-DEFAULT transition-all duration-300 hover:bg-surface hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-tertiary/20">
+<div class="w-16 h-16 mb-4 rounded-full bg-surface-container-low flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-tertiary group-hover:to-tertiary-container transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-on-tertiary transition-colors" data-icon="storefront">storefront</span>
+</div>
+<span class="font-headline font-bold text-lg text-on-surface">商家</span>
+<span class="font-label text-xs text-on-surface-variant mt-1 text-center">管理您的店铺</span>
+</button>
+</div>
+<!-- Action Area -->
+<div class="space-y-4 pt-4">
+<button class="w-full flex items-center justify-center py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-headline font-bold text-lg shadow-[0_8px_20px_-6px_rgba(176,38,4,0.4)] hover:shadow-[0_12px_24px_-6px_rgba(176,38,4,0.5)] hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/20">
+                        使用手机号登录 / 注册
+                    </button>
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-outline-variant/30"></div>
+<span class="flex-shrink-0 mx-4 text-on-surface-variant font-label text-sm">其他登录方式</span>
+<div class="flex-grow border-t border-outline-variant/30"></div>
+</div>
+<button class="w-full flex items-center justify-center py-4 px-6 bg-surface-container-lowest text-on-surface rounded-full font-headline font-bold text-base hover:bg-surface-container-low transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-outline-variant/50">
+<img alt="WeChat" class="w-5 h-5 mr-3 opacity-80" data-alt="WeChat green bubble logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-bhGbEY7m_KtdpT7tfHVlUCyLs7BaZmcdMz4pwfcZVRXE_HGri-lrCzH5HX5fBWvNTU1kNkV-dbS9UskwbMNOPszjgxAqooJ6k0y-4iQR-2JUTe3ipwJmoYhLfvg6lxx9NsztLiDWH7a8-OPazDVqFrblP_n8M1JGpkymZ0oBTHbJoyf_zNGiVIe4QrKC2v4Vpt3Rc0uyTxqf0mz30QXLi2N-h_QRzCqezbN8C-lQBuB_01mUf5SKeHzEA8xQQlpRQPmXisrV4bo"/>
+                        微信快捷登录
+                    </button>
+</div>
+<!-- Terms -->
+<p class="text-center font-label text-xs text-on-surface-variant">
+                    登录即表示您同意我们的 <a class="text-primary hover:underline" href="#">服务条款</a> 和 <a class="text-primary hover:underline" href="#">隐私政策</a>
+</p>
+</div>
+</div>
+</div>
+</body></html>

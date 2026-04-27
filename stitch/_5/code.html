@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'Artisan 厨房 - 菜单</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#565d5f",
+                        "secondary-fixed-dim": "#cfd6d8",
+                        "error-container": "#f74b6d",
+                        "surface-variant": "#ffd2d2",
+                        "secondary": "#565d5f",
+                        "tertiary-dim": "#733291",
+                        "on-primary-container": "#4a0900",
+                        "on-surface": "#4e2123",
+                        "primary-fixed": "#ff7859",
+                        "on-background": "#4e2123",
+                        "surface-container-high": "#ffdad9",
+                        "on-primary-fixed": "#000000",
+                        "on-error": "#ffefef",
+                        "on-secondary-fixed": "#394043",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#803f9e",
+                        "secondary-fixed": "#dde4e6",
+                        "background": "#fff4f3",
+                        "on-tertiary-container": "#50086f",
+                        "error": "#b41340",
+                        "outline": "#a26767",
+                        "surface-container-highest": "#ffd2d2",
+                        "on-secondary-container": "#4c5355",
+                        "tertiary-container": "#dc95fb",
+                        "secondary-dim": "#4a5153",
+                        "primary-container": "#ff7859",
+                        "tertiary-fixed": "#dc95fb",
+                        "surface-container-low": "#ffedec",
+                        "on-primary-fixed-variant": "#5b0d00",
+                        "surface": "#fff4f3",
+                        "on-surface-variant": "#834c4d",
+                        "on-secondary": "#edf4f6",
+                        "on-primary": "#ffefec",
+                        "inverse-surface": "#240305",
+                        "on-error-container": "#510017",
+                        "inverse-on-surface": "#cd8c8c",
+                        "inverse-primary": "#fe5d39",
+                        "secondary-container": "#dde4e6",
+                        "surface-container": "#ffe1e1",
+                        "outline-variant": "#df9c9c",
+                        "primary-fixed-dim": "#fe5d39",
+                        "surface-tint": "#b02604",
+                        "on-tertiary": "#feeeff",
+                        "tertiary-fixed-dim": "#ce88ec",
+                        "primary": "#b02604",
+                        "error-dim": "#a70138",
+                        "on-tertiary-fixed": "#2c0040",
+                        "primary-dim": "#9b1e00",
+                        "surface-bright": "#fff4f3",
+                        "surface-dim": "#ffc7c6",
+                        "on-tertiary-fixed-variant": "#5a1778"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Utility for hiding scrollbar but keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<!-- JSON Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff4f3]/80 dark:bg-[#2d1a1a]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 shadow-none">
+<button class="text-[#b02604] dark:text-[#ff7859] hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] tracking-tight font-bold text-xl text-[#b02604] uppercase tracking-widest">
+            Urban Curator
+        </h1>
+<button class="text-[#b02604] dark:text-[#ff7859] hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</header>
+<!-- Top Section: Store Header -->
+<section class="relative pt-[72px]">
+<div class="h-64 w-full bg-surface-container relative overflow-hidden">
+<img alt="L'Artisan 厨房 interior" class="w-full h-full object-cover" data-alt="Elegant warmly lit Italian restaurant kitchen interior with rustic brick walls, copper pots hanging, and soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5KZy3k_CX0z3zuPr3Zh57d6k7psqdom2JD0ac7Q9veu_wowN7I2bU94civzd2baIHYCQbk0YPaCsrMinn3lRF8uGuEmkydkhfZMeggqk8THc9FDYKF4uy-75IKoQuNV9Hihk9AaV78DrCNK5XVhCTNXVhbRouUXivcSbpNmn_dJABjDjMB4Hha17V81lVnfxcgKDA15IonhmfjewO_5tpt3IPpYtnhBVb08rb5SLRgl7L2RgcqP8B3jOMEkEM9Rv-PkeaTKJ8XL0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative -mt-20 mx-4 p-6 bg-surface-container-lowest rounded-xl shadow-[0_8px_40px_rgba(78,33,35,0.06)] z-10">
+<h2 class="font-headline text-3xl text-on-surface mb-2 font-extrabold tracking-tight">L'Artisan 厨房</h2>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant mb-4 font-label">
+<span class="flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span> 
+                    4.9 
+                    <span class="text-on-surface-variant font-normal">(128)</span>
+</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 
+                    30-45 分钟
+                </span>
+</div>
+<div class="flex items-start gap-2 pt-3 border-t border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">location_on</span>
+<p class="text-sm text-on-surface-variant leading-relaxed">上海市静安区南京西路 1234 号</p>
+</div>
+</div>
+</section>
+<!-- Middle Section: Horizontal Category Tabs -->
+<nav class="sticky top-[72px] z-40 bg-surface/90 backdrop-blur-md pt-6 pb-4 px-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 w-max">
+<button class="px-6 py-2.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-sm font-semibold shadow-[0_4px_12px_rgba(176,38,4,0.2)] tracking-wide">
+                招牌推荐
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-label text-sm font-medium transition-colors hover:text-primary hover:bg-surface-container">
+                意式烩饭
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-label text-sm font-medium transition-colors hover:text-primary hover:bg-surface-container">
+                精选意面
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-label text-sm font-medium transition-colors hover:text-primary hover:bg-surface-container">
+                精选甜品
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-label text-sm font-medium transition-colors hover:text-primary hover:bg-surface-container">
+                冷热饮品
+            </button>
+</div>
+</nav>
+<!-- Main Section: Vertical Product List -->
+<main class="px-4 pb-32 flex flex-col gap-8">
+<!-- Category Section -->
+<div>
+<h3 class="font-headline text-xl text-on-surface font-bold mb-4 pl-2 border-l-4 border-primary">招牌推荐</h3>
+<div class="flex flex-col gap-4">
+<!-- Product Card 1 -->
+<article class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg shadow-[0_4px_20px_rgba(78,33,35,0.03)] transition-transform hover:scale-[1.01]">
+<div class="w-28 h-28 shrink-0 relative rounded-DEFAULT overflow-hidden">
+<img alt="黑松露野菌烩饭" class="w-full h-full object-cover" data-alt="Plated creamy truffle mushroom risotto with parmesan shavings and delicate microgreens on a rustic ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI9AZ6p98xgDYUZ-pUldWUyw1rDZjd3zZvXrkacdkts6bEkipeqwMFMHrH7iNxCg5hYQZHxiuMmpA-yfRmYTtOTOV0FnfFNXpeq8GowepbW0GVZSxPaY68i2Zk_A2qrUSmzFwDkL2Fhzr5_H-shTcvk7sQfhaAUKuS4M2IlpgUFfH8RizkLpryoZrjk1uGK6AA92gdhLl9doeegE_1SBWvDUV0rxvVg5oQ_EbsQSZ3Vxhf6pIAZca5wN9jgETJy0MisAV9K4Kq07M"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h4 class="font-headline text-base text-on-surface font-bold leading-tight mb-1">黑松露野菌烩饭</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">精选意大利Arborio米，搭配新鲜黑松露与多种珍稀菌菇，奶香浓郁，口感丰富层次分明。</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-headline text-lg text-primary font-bold tracking-tight">¥ 88</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg shadow-[0_4px_20px_rgba(78,33,35,0.03)] transition-transform hover:scale-[1.01]">
+<div class="w-28 h-28 shrink-0 relative rounded-DEFAULT overflow-hidden">
+<img alt="经典肉酱意面" class="w-full h-full object-cover" data-alt="Classic spaghetti bolognese twirled elegantly on a white plate, topped with rich red meat sauce, fresh basil leaves, and grated parmesan cheese" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6GySH3ytk_SiKnfwaO6BJbAGQjjJfNpPWLNYn3-C5LGwIq3I2JSjz-BR2LkLn82Na32UBWN_vyHFv89iG0-Ql7rof_Uff5l4ZCwzKaq2MuxWLrqtTnsjcZpnaoA8JFmiX9hbhY7GeBqSQcnYDyiq1o6OE2X0z7KcS0L2-UjZLQxoVQBYYf17aglSEOig8tHNDuPMHVmNhHs8xIsMjdheOCpA7W7w6ZY5YttXacNN_feubGqwIAK3JH2C2KT6c_HTRg-uuyl7dwVc"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h4 class="font-headline text-base text-on-surface font-bold leading-tight mb-1">经典肉酱意面</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">传承自博洛尼亚的经典配方，慢熬鲜香肉酱裹满每一根Q弹意面，回味无穷。</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-headline text-lg text-primary font-bold tracking-tight">¥ 68</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="flex gap-4 p-3 bg-surface-container-lowest rounded-lg shadow-[0_4px_20px_rgba(78,33,35,0.03)] transition-transform hover:scale-[1.01]">
+<div class="w-28 h-28 shrink-0 relative rounded-DEFAULT overflow-hidden">
+<img alt="招牌提拉米苏" class="w-full h-full object-cover" data-alt="A luxurious square slice of classic tiramisu layered with espresso-soaked ladyfingers and mascarpone cream, dusted heavily with dark cocoa powder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUhPEdZ7_n0m0VEz47c1vx2KK8W9jdC4oHVI3SKRybY82L62TkLHrONg-xN3c2iSVkTqU_Y0vQoepjeco8XW18-b8MPvaJDruehia503Zh2I9s771vJpgIygNfJfKUd2EOzhzu5Q0FyPCeliW1t_c22gLHzyhaW1ec9WbGkJB3Z4azI77oWOq8agAeJKCZ57uGjwttswaSn-D8fygeiV6Jq1QwjpqwsSMnGnBEj-nQWP8XxVFashBPfyEwTmcxK_2whcs7zbLVVCU"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h4 class="font-headline text-base text-on-surface font-bold leading-tight mb-1">主厨特制提拉米苏</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">正宗意式风味，浸透浓缩咖啡的手指饼干与绵密马斯卡彭奶酪的完美融合。</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-headline text-lg text-primary font-bold tracking-tight">¥ 45</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Bottom: Floating Cart Summary Bar -->
+<!-- Note: Suppressed JSON BottomNavBar due to Task-Focused/Checkout flow intent -->
+<div class="fixed bottom-6 left-4 right-4 z-50 bg-inverse-surface text-inverse-on-surface rounded-xl p-4 flex items-center justify-between shadow-[0_20px_40px_rgba(36,3,5,0.25)] border border-outline-variant/10 backdrop-blur-lg">
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 bg-surface/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px] text-on-primary">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-inverse-surface">2</span>
+</div>
+<div>
+<p class="font-headline text-lg text-on-primary font-bold tracking-tight">¥ 156.00</p>
+<p class="text-xs text-inverse-on-surface/70 mt-0.5">另需配送费 ¥ 5</p>
+</div>
+</div>
+<button class="px-8 py-3.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-bold tracking-widest uppercase text-sm shadow-[0_4px_12px_rgba(176,38,4,0.3)] hover:opacity-90 transition-opacity">
+            去结算
+        </button>
+</div>
+</body></html>

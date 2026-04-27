@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>确认订单</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-dim": "#a70138",
+                        "on-secondary-fixed": "#394043",
+                        "surface-bright": "#fff4f3",
+                        "on-primary-fixed": "#000000",
+                        "secondary-dim": "#4a5153",
+                        "on-surface-variant": "#834c4d",
+                        "primary-container": "#ff7859",
+                        "on-error-container": "#510017",
+                        "outline-variant": "#df9c9c",
+                        "on-error": "#ffefef",
+                        "on-tertiary": "#feeeff",
+                        "surface-container-high": "#ffdad9",
+                        "on-tertiary-container": "#50086f",
+                        "surface-dim": "#ffc7c6",
+                        "on-primary": "#ffefec",
+                        "error-container": "#f74b6d",
+                        "inverse-on-surface": "#cd8c8c",
+                        "primary-dim": "#9b1e00",
+                        "secondary-fixed": "#dde4e6",
+                        "on-secondary-container": "#4c5355",
+                        "surface": "#fff4f3",
+                        "tertiary-dim": "#733291",
+                        "tertiary-fixed-dim": "#ce88ec",
+                        "on-surface": "#4e2123",
+                        "surface-container-highest": "#ffd2d2",
+                        "on-tertiary-fixed-variant": "#5a1778",
+                        "primary-fixed": "#ff7859",
+                        "secondary-fixed-dim": "#cfd6d8",
+                        "on-primary-container": "#4a0900",
+                        "surface-tint": "#b02604",
+                        "outline": "#a26767",
+                        "inverse-surface": "#240305",
+                        "on-background": "#4e2123",
+                        "secondary-container": "#dde4e6",
+                        "on-secondary-fixed-variant": "#565d5f",
+                        "primary-fixed-dim": "#fe5d39",
+                        "error": "#b41340",
+                        "on-secondary": "#edf4f6",
+                        "tertiary-fixed": "#dc95fb",
+                        "tertiary": "#803f9e",
+                        "on-primary-fixed-variant": "#5b0d00",
+                        "surface-variant": "#ffd2d2",
+                        "inverse-primary": "#fe5d39",
+                        "surface-container": "#ffe1e1",
+                        "secondary": "#565d5f",
+                        "tertiary-container": "#dc95fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#2c0040",
+                        "surface-container-low": "#ffedec",
+                        "primary": "#b02604",
+                        "background": "#fff4f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen antialiased flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff4f3]/80 backdrop-blur-xl transition-opacity hover:opacity-80 scale-95 active:scale-90 transition-transform">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-3xl mx-auto">
+<button class="text-on-background p-2 rounded-full hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight uppercase text-[#b02604] text-xl tracking-tighter">URBANIST</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-surface-container-highest">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young woman with natural makeup, soft warm lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt70PF_UyW2HZqBt7Y3JKwTwnvcTCUl8ydqWVr9tUsOhWCFvOUrC21Jp0DYNW35Quyy6QVZh6iFhgRjaUw7KvpsbZO9YuBFsNIo0A2KNAd4rXSz0ZjSELqKjysaxLMcDY1Ea0w7psnQlFwELmGbW4Ij03cJw5X-mH02RAK_o0FWnHlI31ZwSaYmQbUwf3hPURBw-HpqD9n8BvAcUp5kUSF1t0zOEAYQR9Zx0m21_2uGZGmtP-_QI493mpTsJGI7bo1nXci6RLIHF4"/>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-28 px-4 md:px-8 max-w-3xl mx-auto w-full">
+<h2 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-primary mb-8 ml-2">确认订单</h2>
+<div class="space-y-6">
+<!-- Order Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgb(78,33,35,0.03)] flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-16 -mt-16 opacity-50"></div>
+<h3 class="font-headline text-xl font-bold text-on-background relative z-10">订单详情</h3>
+<!-- Item 1 -->
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shadow-sm shrink-0">
+<img alt="Item image" class="w-full h-full object-cover" data-alt="Healthy colorful grain bowl with avocado, roasted vegetables and greens, soft overhead studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4mPCMFl8KaOA7eABRrGJzCXaGd6_OOCIFio3-G2yYhxtrXEOfgg5JxRo_rwNmMDP4JoS2qFdItlfrPDuB0BZBJ-XU_R8ZOmW7l8p7zy0N6Br0-IT8goJG3YAIr01uIppXPbNkqRFIsi48BqOlFKmqIaB01Y_HqjEEYRlBR9g3Rlt9Bq51c1qiaAcHowpmijZvz0F0iXMwItGM98nR-6DXPqDZJe4c2zhqckHcASfSN-PAVnSuODKPLyFgHd_AHmyuqYpsfy4Q7Qo"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<h4 class="font-bold text-on-background text-lg leading-tight">手工杂粮碗</h4>
+<p class="text-on-surface-variant text-sm mt-1 font-medium">多加牛油果，不要洋葱</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary text-lg">$16.50</p>
+<p class="text-on-surface-variant text-sm font-medium">数量: 1</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 relative z-10 mt-2">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shadow-sm shrink-0">
+<img alt="Item image" class="w-full h-full object-cover" data-alt="Freshly pressed green detox juice in a tall glass, bright airy cafe setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCih4Ah4lfGUhwfETCMmApZum2yGAoSzbRShCdB2XUxM_zXZjaEsIo_i_nyUn0UiICPrRtVNnQDSkBslEmqIXY99BcW5JkzpH5WyDIq_tar1PVdZVe8OYL79L8UldSfFKUmDSZx90KvRU8DCVe_CfSK01JJP8JwL9n5BPFNTAE2oqTC78aOWbCcShXWizFrZ7V0EPIslfL7Aba605jDgn40n96UxiQgufnOIwY3lGjc5zMKJlYd_l6AVBe710SKwp6Z6G0lrCWHO5U"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<h4 class="font-bold text-on-background text-lg leading-tight">绿色排毒果汁</h4>
+<p class="text-on-surface-variant text-sm mt-1 font-medium">大杯 (16oz)</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary text-lg">$8.00</p>
+<p class="text-on-surface-variant text-sm font-medium">数量: 1</p>
+</div>
+</div>
+</section>
+<!-- Delivery Address Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgb(78,33,35,0.03)] flex flex-col gap-5">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-xl font-bold text-on-background">配送信息</h3>
+<button class="text-primary text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">编辑</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<p class="font-bold text-on-background mb-1">家</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">123 Urbanist Avenue, Apt 4B<br/>Metropolis, NY 10001</p>
+<p class="text-on-surface-variant text-sm mt-2 font-medium">备注：请放在前台。</p>
+</div>
+</div>
+</section>
+<!-- Payment Method Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgb(78,33,35,0.03)] flex flex-col gap-5">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-xl font-bold text-on-background">支付方式</h3>
+<button class="text-primary text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">更改</button>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-lg">
+<div class="w-12 h-8 bg-surface-container-highest rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-background">•••• •••• •••• 4242</p>
+<p class="text-on-surface-variant text-sm font-medium">有效期至 12/25</p>
+</div>
+</div>
+</section>
+<!-- Price Breakdown -->
+<section class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-3">
+<div class="flex justify-between items-center text-on-background font-medium">
+<span>小计</span>
+<span>$24.50</span>
+</div>
+<div class="flex justify-between items-center text-on-background font-medium">
+<span>配送费</span>
+<span>$3.99</span>
+</div>
+<div class="flex justify-between items-center text-on-background font-medium">
+<span>税费</span>
+<span>$2.45</span>
+</div>
+<div class="mt-2 pt-4 flex justify-between items-center text-xl font-headline font-bold text-primary">
+<span>合计</span>
+<span>$30.94</span>
+</div>
+</section>
+<!-- Checkout Action -->
+<div class="pt-4 pb-8">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg py-5 rounded-full shadow-[0_8px_30px_rgb(176,38,4,0.2)] hover:shadow-[0_12px_40px_rgb(176,38,4,0.3)] transition-all active:scale-[0.98]">
+                    立即下单 • $30.94
+                </button>
+<p class="text-center text-xs text-on-surface-variant mt-4 font-medium px-8">下单即表示您同意我们的服务条款和隐私政策。</p>
+</div>
+</div>
+</main>
+</body></html>
