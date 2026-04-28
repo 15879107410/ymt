@@ -64,9 +64,11 @@ export default async function MerchantMenuPage({
             style={{ backgroundImage: `url(${merchantHeroImage})` }}
           />
           <h2 className="mt-6 font-heading text-3xl font-extrabold tracking-tight text-foreground">
-            {merchant.shopName}
+            {merchant.shopName || "商家店铺"}
           </h2>
-          <p className="mt-2 text-sm leading-7 text-muted">{merchant.description}</p>
+          <p className="mt-2 text-sm leading-7 text-muted">
+            {merchant.description || "暂无简介"}
+          </p>
         </section>
 
         <MerchantProductList

@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChevronRight, Minus, Plus, ShoppingBag } from "lucide-react";
+import { ChevronRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 
 type Product = {
@@ -28,6 +28,9 @@ export default function MerchantProductList({
 
   // 购物车状态：{ 商品ID -> 数量 }
   const [cart, setCart] = useState<Record<number, number>>({});
+
+  // 购物车面板是否展开。
+  const [cartOpen, setCartOpen] = useState(false);
 
   // 增加商品数量，不能超过库存。
   const increase = useCallback(
@@ -66,8 +69,23 @@ export default function MerchantProductList({
     return sum + (product?.price || 0) * qty;
   }, 0);
 
-  // 点击底部结算栏，把购物车数据编码后跳转到确认订单页。
-  const handleCheckout = () => {
+  // 构建购物车中的商品详情列表，用于在面板中展示。
+  const cartItems = Object.entries(cart)
+    .map(([id, qty]) => {
+      const product = products.find((p) => p.id === Number(id));
+      if (!product) return null;
+      return { product, quantity: qty };
+    })
+    .filter(Boolean) as Array<{ product: Product; quantity: number }>;
+
+  // 点击底部汇总栏：有商品时展开购物车面板，无商品时不做操作。
+  const handleCartBarClick = () => {
+    if (totalCount === 0) return;
+    setCartOpen(true);
+  };
+
+  // 点击"去结算"按钮，把购物车数据编码后跳转到确认订单页。
+  const handleGoCheckout = () => {
     if (totalCount === 0) return;
 
     const items = Object.entries(cart).map(([id, qty]) => ({
@@ -155,14 +173,116 @@ export default function MerchantProductList({
         </div>
       </section>
 
-      {/* 底部购物车汇总栏 */}
-      <button
-        type="button"
-        onClick={handleCheckout}
-        disabled={totalCount === 0}
-        className="fixed bottom-6 left-1/2 z-[100] flex w-[calc(100%-3rem)] max-w-[382px] -translate-x-1/2 cursor-pointer items-center justify-between rounded-full bg-[linear-gradient(135deg,#b02604,#ff7859)] px-6 py-4 text-white shadow-[0_12px_28px_rgba(176,38,4,0.25)] transition-all duration-150 hover:shadow-[0_16px_36px_rgba(176,38,4,0.35)] active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60"
+      {/* 购物车面板遮罩层 */}
+      {cartOpen && (
+        <div
+          className="fixed inset-0 z-[90] bg-black/40 backdrop-blur-sm"
+          onClick={() => setCartOpen(false)}
+        />
+      )}
+
+      {/* 购物车面板：从底部滑出 */}
+      <div
+        className={`fixed left-1/2 z-[100] w-full max-w-[430px] -translate-x-1/2 rounded-t-[2rem] bg-card shadow-[0_-8px_32px_rgba(78,33,35,0.12)] transition-transform duration-300 ease-out ${
+          cartOpen ? "bottom-0 translate-y-0" : "bottom-0 translate-y-full"
+        }`}
+        style={{ maxHeight: "60vh" }}
       >
-        <div className="flex items-center gap-3">
+        {/* 面板头部 */}
+        <div className="flex items-center justify-between border-b border-card-soft px-6 py-4">
+          <h3 className="font-heading text-lg font-bold text-foreground">
+            已选商品
+          </h3>
+          <button
+            type="button"
+            onClick={() => setCartOpen(false)}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-card-soft text-muted"
+            aria-label="关闭购物车"
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        {/* 商品列表 */}
+        <div className="max-h-[35vh] overflow-y-auto px-6 py-4">
+          {cartItems.length === 0 ? (
+            <p className="py-8 text-center text-sm text-muted">购物车是空的</p>
+          ) : (
+            <div className="space-y-4">
+              {cartItems.map(({ product, quantity }) => (
+                <div
+                  key={product.id}
+                  className="flex items-center gap-3"
+                >
+                  <div className="h-14 w-14 shrink-0 rounded-[0.75rem] bg-[linear-gradient(135deg,#240305,#803f9e,#ff7859)]" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-bold text-foreground">
+                      {product.name}
+                    </p>
+                    <p className="mt-1 font-heading text-sm font-bold text-primary">
+                      {formatPrice(product.price)}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-full bg-card-soft px-2 py-1.5">
+                    <button
+                      type="button"
+                      onClick={() => decrease(product.id)}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-card text-primary shadow-sm"
+                      aria-label={`减少${product.name}数量`}
+                    >
+                      <Minus size={12} />
+                    </button>
+                    <span className="w-5 text-center text-sm font-bold text-foreground">
+                      {quantity}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => increase(product)}
+                      disabled={quantity >= product.stock}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-[linear-gradient(135deg,#b02604,#ff7859)] text-white shadow-sm disabled:opacity-40"
+                      aria-label={`增加${product.name}数量`}
+                    >
+                      <Plus size={12} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* 面板底部：汇总 + 去结算 */}
+        <div className="border-t border-card-soft px-6 py-4">
+          <div className="mb-4 flex items-center justify-between">
+            <span className="text-sm text-muted">合计</span>
+            <span className="font-heading text-xl font-bold text-primary">
+              {formatPrice(totalAmount)}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={handleGoCheckout}
+            disabled={totalCount === 0}
+            className="w-full rounded-full bg-[linear-gradient(135deg,#b02604,#ff7859)] py-4 font-heading text-lg font-bold text-white shadow-[0_8px_24px_rgba(176,38,4,0.25)] transition-all duration-150 hover:shadow-[0_10px_28px_rgba(176,38,4,0.35)] active:scale-[0.97] disabled:opacity-60"
+          >
+            去结算
+          </button>
+        </div>
+      </div>
+
+      {/* 底部购物车汇总栏：左侧打开面板，右侧直接结算 */}
+      <div
+        className={`fixed bottom-6 left-1/2 z-[110] flex w-[calc(100%-3rem)] max-w-[382px] -translate-x-1/2 items-center justify-between rounded-full bg-[linear-gradient(135deg,#b02604,#ff7859)] text-white shadow-[0_12px_28px_rgba(176,38,4,0.25)] ${
+          totalCount === 0 ? "opacity-60" : ""
+        }`}
+      >
+        {/* 左侧：点击展开购物车面板 */}
+        <button
+          type="button"
+          onClick={handleCartBarClick}
+          disabled={totalCount === 0}
+          className="flex flex-1 items-center gap-3 px-6 py-4 transition-all duration-150 hover:shadow-[0_16px_36px_rgba(176,38,4,0.35)] active:scale-[0.97] disabled:cursor-not-allowed"
+        >
           <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
             <ShoppingBag size={18} />
             {totalCount > 0 && (
@@ -174,11 +294,18 @@ export default function MerchantProductList({
           <span className="text-sm font-semibold">
             已选 {totalCount} 件商品
           </span>
-        </div>
-        <span className="font-heading text-lg font-bold">
+        </button>
+
+        {/* 右侧：点击直接跳转结算页 */}
+        <button
+          type="button"
+          onClick={handleGoCheckout}
+          disabled={totalCount === 0}
+          className="shrink-0 px-6 py-4 font-heading text-lg font-bold transition-all duration-150 hover:shadow-[0_16px_36px_rgba(176,38,4,0.35)] active:scale-[0.97] disabled:cursor-not-allowed"
+        >
           {formatPrice(totalAmount)}
-        </span>
-      </button>
+        </button>
+      </div>
     </>
   );
 }

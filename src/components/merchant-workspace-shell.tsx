@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  Bell,
   Boxes,
   ClipboardList,
   LayoutDashboard,
@@ -96,12 +95,6 @@ export function MerchantWorkspaceShell({
           <span className="font-heading text-xl font-extrabold tracking-[-0.04em] text-primary">
             Lumière Merchant
           </span>
-        </div>
-        <div className="flex items-center gap-4">
-          <button className="flex h-10 w-10 items-center justify-center rounded-full text-muted transition-colors hover:bg-card-soft">
-            <Bell size={18} />
-          </button>
-          <div className="h-10 w-10 rounded-full bg-card-strong shadow-sm" />
         </div>
       </header>
 

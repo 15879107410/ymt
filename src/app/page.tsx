@@ -8,16 +8,18 @@ import {
   Leaf,
   Search,
   ShoppingBasket,
-  SlidersHorizontal,
   Star,
   Utensils,
 } from "lucide-react";
 import { FlashBanner } from "@/components/flash-banner";
 import { prisma } from "@/lib/prisma";
 
+import { FilterPanel } from "@/components/filter-panel";
+
 type HomePageProps = {
   searchParams: Promise<{
     status?: string;
+    sort?: string;
   }>;
 };
 
@@ -60,7 +62,16 @@ const prototypeCards = [
 
 // 首页现在按 stitch/_4 的移动端原型一比一靠拢，商品链接仍然接真实 MVP 数据。
 export default async function HomePage({ searchParams }: HomePageProps) {
-  const { status } = await searchParams;
+  const { status, sort } = await searchParams;
+
+  // 根据 sort 参数决定排序方式。
+  const orderBy =
+    sort === "price_asc"
+      ? { price: "asc" as const }
+      : sort === "price_desc"
+        ? { price: "desc" as const }
+        : { createdAt: "desc" as const };
+
   const featuredProducts = await prisma.product.findMany({
     where: {
       status: "ACTIVE",
@@ -68,9 +79,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     include: {
       merchant: true,
     },
-    orderBy: {
-      createdAt: "desc",
-    },
+    orderBy,
     take: 6,
   });
 
@@ -124,9 +133,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               readOnly
             />
             <div className="absolute inset-y-2 right-2 flex items-center">
-              <button className="flex h-12 w-12 items-center justify-center rounded-[1.5rem] bg-card text-primary shadow-[0_4px_15px_rgba(78,33,35,0.05)]">
-                <SlidersHorizontal size={18} />
-              </button>
+              <FilterPanel currentSort={sort} />
             </div>
           </div>
         </div>
@@ -151,15 +158,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             const Icon = item.icon;
 
             return (
-              <div
+              <Link
                 key={item.label}
+                href={`/category/${encodeURIComponent(item.label)}`}
                 className="flex min-w-[5rem] shrink-0 flex-col items-center gap-3"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-card shadow-[0_8px_20px_rgba(78,33,35,0.04)]">
+                <div className="flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-card shadow-[0_8px_20px_rgba(78,33,35,0.04)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(78,33,35,0.08)]">
                   <Icon className={item.tone} size={30} />
                 </div>
                 <span className="text-sm font-medium text-muted">{item.label}</span>
-              </div>
+              </Link>
             );
           })}
         </div>

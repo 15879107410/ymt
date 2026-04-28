@@ -20,11 +20,11 @@ async function main() {
       role: UserRole.MERCHANT,
       merchantProfile: {
         create: {
-          shopName: "Lumiere Kitchen",
-          contactName: "林店长",
-          contactPhone: "13800000001",
-          address: "上海市静安区南京西路 1234 号",
-          description: "主打轻奢感餐饮与精选甜品的本地生活店铺。",
+          shopName: "",
+          contactName: "",
+          contactPhone: "",
+          address: "",
+          description: "",
           coverImageUrl: "",
         },
       },
@@ -53,6 +53,7 @@ async function main() {
       description: "奶香浓郁、口感顺滑的招牌烩饭，适合作为首页主打商品。",
       price: 88,
       stock: 18,
+      category: "美食",
       status: ProductStatus.ACTIVE,
     },
   });
@@ -64,6 +65,7 @@ async function main() {
       description: "轻食型商品，用来展示多品类商品卡片和下单流程。",
       price: 32,
       stock: 35,
+      category: "健康",
       status: ProductStatus.ACTIVE,
     },
   });
@@ -75,6 +77,68 @@ async function main() {
       description: "用于确认订单页和订单列表页演示的小体量单品。",
       price: 18,
       stock: 42,
+      category: "美食",
+      status: ProductStatus.ACTIVE,
+    },
+  });
+
+  // 补充更多分类商品，让首页筛选有数据可展示。
+  await prisma.product.create({
+    data: {
+      merchantId,
+      name: "意式浓缩咖啡",
+      description: "深度烘焙阿拉比卡豆，油脂丰富，口感醇厚。",
+      price: 28,
+      stock: 50,
+      category: "咖啡",
+      status: ProductStatus.ACTIVE,
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      merchantId,
+      name: "燕麦拿铁",
+      description: "植物基燕麦奶与浓缩咖啡的完美融合，丝滑顺口。",
+      price: 32,
+      stock: 40,
+      category: "咖啡",
+      status: ProductStatus.ACTIVE,
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      merchantId,
+      name: "有机全麦面包",
+      description: "天然酵母发酵，无添加防腐剂，健康早餐首选。",
+      price: 22,
+      stock: 25,
+      category: "超市",
+      status: ProductStatus.ACTIVE,
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      merchantId,
+      name: "希腊酸奶",
+      description: "高蛋白低糖，搭配水果坚果，营养均衡。",
+      price: 16,
+      stock: 30,
+      category: "健康",
+      status: ProductStatus.ACTIVE,
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      merchantId,
+      name: "进口矿泉水",
+      description: "阿尔卑斯山天然矿泉水，弱碱性，口感清冽。",
+      price: 12,
+      stock: 100,
+      category: "超市",
       status: ProductStatus.ACTIVE,
     },
   });

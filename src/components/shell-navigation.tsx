@@ -31,7 +31,7 @@ export function ShellNavigation({ user }: ShellNavigationProps) {
     },
     {
       key: "discover",
-      href: "/",
+      href: "/discover",
       label: "发现",
       icon: Compass,
     },
@@ -43,7 +43,7 @@ export function ShellNavigation({ user }: ShellNavigationProps) {
     },
     {
       key: "profile",
-      href: user?.role === "MERCHANT" ? "/merchant" : "/auth",
+      href: user?.role === "MERCHANT" ? "/merchant" : "/profile",
       label: "我的",
       icon: User2,
     },
@@ -54,9 +54,7 @@ export function ShellNavigation({ user }: ShellNavigationProps) {
       <nav className="fixed bottom-0 left-1/2 z-40 flex w-full max-w-[390px] -translate-x-1/2 items-center justify-around rounded-t-[2.5rem] bg-background/80 px-4 pb-6 pt-3 shadow-[0_-8px_30px_rgba(78,33,35,0.04)] backdrop-blur-2xl md:hidden">
         {mobileLinks.map((link) => {
           const Icon = link.icon;
-          const active =
-            (link.key === "home" && pathname === "/") ||
-            (link.key !== "discover" && isActivePath(pathname, link.href));
+          const active = isActivePath(pathname, link.href);
 
           return (
             <Link

@@ -1,5 +1,7 @@
 import { requireMerchant } from "@/lib/auth";
+import { ClearPlaceholderProvider } from "@/components/clear-placeholder-provider";
 import { FlashBanner } from "@/components/flash-banner";
+import { ImageUpload } from "@/components/image-upload";
 import { MerchantWorkspaceShell } from "@/components/merchant-workspace-shell";
 import { prisma } from "@/lib/prisma";
 
@@ -49,6 +51,7 @@ export default async function MerchantProfilePage({
           method="post"
           className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8"
         >
+          <ClearPlaceholderProvider>
           <section className="flex flex-col gap-6 lg:col-span-8">
             <div className="relative overflow-hidden rounded-[2rem] bg-card p-6 shadow-[0_8px_30px_rgba(78,33,35,0.04)] md:p-8">
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-bl-full bg-primary/10 blur-2xl" />
@@ -135,21 +138,10 @@ export default async function MerchantProfilePage({
               <p className="mb-6 text-sm text-muted">
                 上传店铺封面。需要高分辨率图片。
               </p>
-              <div className="flex min-h-[300px] flex-1 cursor-pointer flex-col items-center justify-center rounded-[1.5rem] border-2 border-dashed border-border-soft/50 bg-card-soft/50 p-6 text-center transition-colors hover:bg-card-soft">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-card-strong text-3xl text-primary">
-                  🖼️
-                </div>
-                <span className="mb-1 font-heading font-semibold text-foreground">
-                  点击上传
-                </span>
-                <span className="text-xs text-muted">支持 PNG、JPG，最大 10MB</span>
-                <input
-                  name="coverImageUrl"
-                  className="mt-6 field-input"
-                  defaultValue={merchant?.coverImageUrl ?? ""}
-                  placeholder="也可直接填写图片 URL"
-                />
-              </div>
+              <ImageUpload
+                name="coverImageUrl"
+                defaultValue={merchant?.coverImageUrl ?? ""}
+              />
             </div>
 
             <div className="flex flex-col gap-4">
@@ -164,6 +156,7 @@ export default async function MerchantProfilePage({
               </button>
             </div>
           </aside>
+          </ClearPlaceholderProvider>
         </form>
       </div>
     </MerchantWorkspaceShell>
